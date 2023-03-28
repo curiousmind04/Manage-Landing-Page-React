@@ -1,0 +1,51 @@
+.backdrop {
+  background: linear-gradient(to bottom, #fff 0%, #000 10%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.container {
+  width: calc(100% - 3rem);
+  position: absolute;
+  top: 2.2rem;
+  left: 1.5rem;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: flex-end;
+}
+
+.container > img {
+  cursor: pointer;
+}
+
+.container .menu {
+  background-color: #fff;
+  width: 100%;
+  padding: 2.6rem;
+  text-align: center;
+  border-radius: 0.3rem;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.65rem;
+}
+
+.menu a {
+  color: hsl(228, 39%, 23%);
+  font-size: 0.98rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
