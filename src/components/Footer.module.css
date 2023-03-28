@@ -1,0 +1,45 @@
+.top {
+  background-color: hsl(12, 88%, 59%);
+  text-align: center;
+  padding: 6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.top h2 {
+  color: hsl(0, 0%, 100%);
+  font-size: 2.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.top .btn {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(12, 88%, 59%);
+  width: 8.5rem;
+  height: 2.8rem;
+  border-radius: 5rem;
+  border: none;
+  outline: none;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.top img {
+  width: 34rem;
+  height: 34rem;
+  position: absolute;
+  bottom: -12rem;
+  left: -28rem;
+  opacity: 0.1;
+}
+
+.bottom {
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+}
