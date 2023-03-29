@@ -1,12 +1,16 @@
 .top {
   background-color: hsl(12, 88%, 59%);
-  text-align: center;
   padding: 6rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.top > div {
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .top h2 {
@@ -30,9 +34,13 @@
   cursor: pointer;
 }
 
-.top svg {
+.top .svg1 {
   position: absolute;
   left: 0;
+}
+
+.top .svg2 {
+  display: none;
 }
 
 .bottom {
@@ -43,10 +51,14 @@
 }
 
 .form {
+  width: 100%;
+  max-width: 22rem;
+  margin-inline: auto;
   display: grid;
   grid-template-columns: calc(74% - 0.25rem) calc(26% - 0.25rem);
   column-gap: 0.5rem;
   margin-bottom: 3.6rem;
+  position: relative;
 }
 
 .form input,
@@ -70,6 +82,23 @@
   font-size: 0.72rem;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.form input ~ p {
+  display: none;
+}
+
+.form .error {
+  color: hsl(0, 80%, 41%);
+}
+
+.form .error ~ p {
+  display: block;
+  color: hsl(0, 80%, 41%);
+  font-size: 0.65rem;
+  position: absolute;
+  left: 1.5rem;
+  bottom: -1.3rem;
 }
 
 .bottom ul {
@@ -101,6 +130,8 @@
 
 .socials {
   width: 100%;
+  max-width: 22rem;
+  margin-inline: auto;
   padding-inline: 1rem;
   display: flex;
   justify-content: space-between;
@@ -123,11 +154,128 @@
   transform-origin: top left;
 }
 
-.bottom > svg {
+.bottom > div > svg {
   margin-bottom: 3rem;
 }
 
-.bottom > p {
+.bottom > div > p {
   color: hsl(227, 12%, 61%);
   font-size: 0.72rem;
+}
+
+@media (max-width: 20rem) {
+  .bottom {
+    padding: 3rem 1rem 2rem 1rem;
+  }
+  .form input {
+    padding-left: 0.8rem;
+    font-size: 0.65rem;
+  }
+  .form .error ~ p {
+    left: 0.8rem;
+  }
+  .links {
+    gap: 10%;
+  }
+  .socials li svg {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+  .socials li svg path {
+    scale: 1;
+    transform-origin: top left;
+  }
+}
+
+@media (min-width: 53rem) {
+  .top {
+    padding: 4rem 2.5rem;
+  }
+  .top > div {
+    max-width: 68.5rem;
+    margin-inline: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: start;
+  }
+  .top h2 {
+    max-width: 28rem;
+    font-size: 2.3rem;
+    margin-bottom: 0;
+  }
+  .top .svg1 {
+    display: none;
+  }
+  .top .svg2 {
+    display: block;
+    position: absolute;
+    left: 15%;
+    top: -8rem;
+    pointer-events: none;
+  }
+  .bottom {
+    padding: 4rem 2.5rem 3rem 2.5rem;
+  }
+  .bottom > div {
+    max-width: 68.5rem;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+      "logo links form"
+      "socials links license";
+  }
+  .bottom > div > svg {
+    grid-area: logo;
+    margin: 0;
+  }
+  .links {
+    grid-area: links;
+    justify-content: center;
+    gap: 20%;
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+  .links ul {
+    gap: 0.8rem;
+  }
+  .form {
+    height: fit-content;
+    width: 17rem;
+    margin: 0;
+    margin-left: auto;
+    grid-area: form;
+  }
+  .socials {
+    grid-area: socials;
+    height: fit-content;
+    justify-content: flex-start;
+    gap: 0.7rem;
+    padding: 0;
+    margin: 0;
+    margin-top: auto;
+  }
+  .socials li svg {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+  .socials li svg path {
+    scale: 1;
+    transform-origin: top left;
+  }
+  .bottom > div > p {
+    grid-area: license;
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-top: auto;
+  }
+}
+
+@media (min-width: 65rem) {
+  .links {
+    justify-content: flex-end;
+    gap: 54%;
+  }
 }

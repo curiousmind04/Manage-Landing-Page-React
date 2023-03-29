@@ -49,3 +49,10 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+@media (min-width: 53rem) {
+  .backdrop,
+  .container {
+    display: none;
+  }
+}

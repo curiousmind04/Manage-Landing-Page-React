@@ -16,7 +16,9 @@ function Info() {
       <div className={classes.right}>
         <div className={classes.section}>
           <div className={classes.title}>
-            <div className={classes.number}>01</div>
+            <div className={classes.number}>
+              <span>01</span>
+            </div>
             <h3>Track company-wide progress</h3>
           </div>
           <p>
