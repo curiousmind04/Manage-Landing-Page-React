@@ -1,7 +1,7 @@
 .container {
   padding-top: 0rem;
   padding-bottom: 6rem;
-  background-image: url("images/bg-tablet-pattern.svg");
+  background-image: url("/images/bg-tablet-pattern.svg");
   background-position: bottom 0rem right -11.5rem;
   background-size: 20rem 20rem;
   background-repeat: no-repeat;
