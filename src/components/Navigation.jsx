@@ -42,6 +42,7 @@ function Navigation() {
           alt="hamburger icon"
           className={classes.hamburger}
           onClick={openMenuHandler}
+          tabIndex="0"
         />
       )}
       {menu && <MobileMenu onCloseMenu={onCloseMenu} />}

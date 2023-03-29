@@ -3,6 +3,29 @@ import classes from "./Testimonials.module.css";
 
 function Testimonials() {
   const [tab, setTab] = useState(1);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStart - touchEnd > 75 && tab < 4) {
+      setTab((prev) => parseInt(prev) + 1);
+    } else if (touchStart - touchEnd > 150 && tab === 4) {
+      setTab(1);
+    }
+    if (touchStart - touchEnd < -75 && tab > 1) {
+      setTab((prev) => prev - 1);
+    } else if (touchStart - touchEnd < -150 && tab === 1) {
+      setTab(4);
+    }
+  };
 
   const tabSwitchHandler = (e) => {
     if (e.target.id === "tab-one") {
@@ -41,6 +64,9 @@ function Testimonials() {
           id="tab-panel-one"
           hidden={tab === 1 ? false : true}
           tabIndex="0"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div className={classes.avatar}>
             <img src="/images/avatar-anisha.png" alt="anisha avatar" />
@@ -61,6 +87,9 @@ function Testimonials() {
           id="tab-panel-two"
           hidden={tab === 2 ? false : true}
           tabIndex="0"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div className={classes.avatar}>
             <img src="/images/avatar-ali.png" alt="ali avatar" />
@@ -81,6 +110,9 @@ function Testimonials() {
           id="tab-panel-three"
           hidden={tab === 3 ? false : true}
           tabIndex="0"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div className={classes.avatar}>
             <img src="/images/avatar-richard.png" alt="richard avatar" />
@@ -101,6 +133,9 @@ function Testimonials() {
           id="tab-panel-four"
           hidden={tab === 4 ? false : true}
           tabIndex="0"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div className={classes.avatar}>
             <img src="/images/avatar-shanai.png" alt="shanai avatar" />
